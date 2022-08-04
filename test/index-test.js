@@ -1,3 +1,4 @@
+const { expect } = require("chai");
 const { name, height, message } = require("../index.js");
 
   describe("Name",() => {
@@ -6,9 +7,16 @@ const { name, height, message } = require("../index.js");
   }); 
 });
 
-describe("Height", ()=>{
-  it("is less than 40",()=>{
+describe("Height", () => {
+  it("is less than 40",() => {
     expect(height).toBeLessThan(40); 
+  });
+});
+
+describe("Message",() => {
+  it("gives the name and  height", () => {
+    expect(message).toInclude(name)
+    expect(message).toInclude(height)
   });
 });
 
